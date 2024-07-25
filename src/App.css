@@ -1,11 +1,39 @@
 /* Estilos globais */
+* {
+  cursor: none;
+}
 .App {
-  background-color: #0a0a0a;
+  background-color: #000000;
   min-height: 100vh;
   min-width: 100vh;
+}
+.cursor {
+  z-index: 1;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+}
+header {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  justify-content: space-around;
+}
+.icon-header {
+  height: 45px;
+}
+.nav-item {
+  margin: 0px 10px;
+  transition: all 0.2s;
+}
+.nav-item:hover {
+  color: green !important;
 }
 
 .icon {
   border-radius: 50%;
-  height: 260px;
+  height: 300px;
 }
+
