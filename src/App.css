@@ -1,39 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Animações */
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-15%);
+  }
+}
 /* Estilos globais */
-* {
-  cursor: none;
+*{
+  margin: 0;
+  padding: 0;
 }
 .App {
   background-color: #000000;
   min-height: 100vh;
   min-width: 100vh;
 }
-.cursor {
-  z-index: 1;
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  transform: translate(-50%,-50%);
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
+.text-green {
+  color: #4caf50;
+}
+.bg-darker {
+  background-color:rgba(26, 26, 26, 0.6);
+  /*  rgba(26, 26, 26, 0.6) */
+}
+
+/* Estilo para o cabeçalho */
 header {
+  z-index: 1;
+  position: sticky;
+  top: 20px;
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
   justify-content: space-around;
 }
 .icon-header {
   height: 45px;
+
 }
 .nav-item {
+  text-decoration: none;
   margin: 0px 10px;
-  transition: all 0.2s;
-}
-.nav-item:hover {
-  color: green !important;
+  font-size: 18px;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
 }
 
-.icon {
-  border-radius: 50%;
-  height: 300px;
+.nav-item:focus:after,
+.nav-item:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-item:after {
+  content: "";
+  pointer-events: none;
+  bottom: 10px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+/* Main */
+section {
+  margin-top: 10rem;
+}
+.hand {
+  display: inline-block;
+  animation: hand 1s ease-out;
+}
+.title {
+  font-size: 60pt;
+  letter-spacing: 6pt;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+/* Estilo para o banner com rolagem infinita */
+.scrolling-banner {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-content {
+  display: inline-block;
+  animation: scroll-left 15s linear infinite;
+  white-space: nowrap;
+}
+
+.scrolling-content img {
+  height: 60px;
+  margin: 30px;
+}
+
+
+.about {
+  margin-top: 10rem;
+}
+.about p {
+  font-size: 14pt;
+  font-size: 16pt;
+}
+.photo {
+  border-radius: 2rem;
+  height: 400px;
+}
+
+/* Estilos para o footer */
+footer {
+  margin-top: 10rem;
 }
 
