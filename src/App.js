@@ -51,7 +51,7 @@ function App() {
         <div className="nav mt-2 me-5">
           <a href="#skills" className="nav-item text-light fw-semibold">HABILIDADES</a>
           <a href="#projects" className="nav-item text-light fw-semibold">PROJETOS</a>
-          <a href="#about" className="nav-item text-light fw-semibold">SOBRE MIM</a>  
+          <a href="#about" className="nav-item text-light fw-semibold">SOBRE MIM</a>
         </div>
       </header>
       <main className="mt-5">
@@ -124,8 +124,8 @@ function App() {
               <div className="col-5 text-center">
                 <h2 className="josefin-sans text-light fw-bolder mt-4">Sobre mim</h2>
                 <p className="josefin-sans fw-normal text-light text-center mt-5">
-                  Tenho 15 anos e atualmente moro em Teófilo Otoni - MG. Sou um estudante apaixonado por <span className="text-success">tecnologia</span>, especialmente pelo <span className="text-success"> desenvolvimento web.</span> Minha paixão é criar <span className="text-success">experiências visuais </span> incríveis que cativem os usuários na <span className="text-success">internet.</span> 👨‍💻
-                  <br />💡 Estou constantemente buscando novos desafios e oportunidades de aprendizado para aprimorar minhas habilidades.
+                  Tenho 15 anos e atualmente moro em Teófilo Otoni - MG. Sou um estudante apaixonado por <span className="text-success">tecnologia</span>, especialmente pelo <span className="text-success"> desenvolvimento web.</span> Minha paixão é criar experiências visuais incríveis que cativem os usuários na <span className="text-success">internet.</span> 👨‍💻
+                  <br />💡 Estou constantemente buscando novos desafios e <span className="text-success">oportunidades</span> de aprendizado para aprimorar minhas habilidades.
                 </p>
               </div>
             </div>
