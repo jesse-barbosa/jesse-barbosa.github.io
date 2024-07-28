@@ -51,7 +51,7 @@ function App() {
         <div className="nav mt-2 me-5">
           <a href="#skills" className="nav-item text-light fw-semibold">HABILIDADES</a>
           <a href="#projects" className="nav-item text-light fw-semibold">PROJETOS</a>
-          <a href="#about" className="nav-item text-light fw-semibold">SOBRE MIM</a>
+          <a href="#about" className="nav-item text-light fw-semibold">SOBRE MIM</a>  
         </div>
       </header>
       <main className="mt-5">
