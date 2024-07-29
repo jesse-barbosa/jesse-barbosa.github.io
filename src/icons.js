@@ -3,6 +3,7 @@ import htmlIcon from './img/languages/html.png';
 import cssIcon from './img/languages/css.png';
 import jsIcon from './img/languages/js.png';
 import bootstrapIcon from './img/languages/bootstrap.png';
+import reactIcon from './img/languages/react.png';
 import nodeIcon from './img/languages/nodeJS.png';
 import phpIcon from './img/languages/PHP.png';
 import sqlIcon from './img/languages/sql.png';
@@ -12,6 +13,7 @@ const iconData = [
   { src: cssIcon, alt: 'CSS' },
   { src: jsIcon, alt: 'JavaScript' },
   { src: bootstrapIcon, alt: 'Bootstrap' },
+  { src: reactIcon, alt: 'SQL' },
   { src: nodeIcon, alt: 'NodeJS' },
   { src: phpIcon, alt: 'PHP' },
   { src: sqlIcon, alt: 'SQL' },
