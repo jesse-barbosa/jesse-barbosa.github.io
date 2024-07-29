@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.763c8aab.css",
-    "main.js": "/portfolio/static/js/main.ec628875.js",
-    "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
-    "static/media/coding.png": "/portfolio/static/media/coding.9078f3e9dcde5b6ec09e.png",
-    "static/media/bootstrap-icons.woff?": "/portfolio/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
-    "static/media/wallet-print.png": "/portfolio/static/media/wallet-print.c8910eea7f73aa13408b.png",
-    "static/media/notten-print.png": "/portfolio/static/media/notten-print.24143b6138c3a88c8c4e.png",
-    "static/media/bootstrap-icons.woff2?": "/portfolio/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
-    "static/media/icon-header.png": "/portfolio/static/media/icon-header.cb2e10c5d85082c6dc5e.png",
-    "static/media/icon.jpg": "/portfolio/static/media/icon.63d775e273c3437604ea.jpg",
-    "static/media/bootstrap.png": "/portfolio/static/media/bootstrap.3fa946b621297cd902db.png",
-    "static/media/html.png": "/portfolio/static/media/html.ab1cdadaefe6ad9fd95a.png",
-    "static/media/js.png": "/portfolio/static/media/js.854d47751eb61d44ef81.png",
-    "static/media/PHP.png": "/portfolio/static/media/PHP.502964ac585cdadcaeb0.png",
-    "static/media/sql.png": "/portfolio/static/media/sql.1865ef861441bf54fd8e.png",
-    "static/media/nodeJS.png": "/portfolio/static/media/nodeJS.1b7be8a8540f3b066bea.png",
-    "index.html": "/portfolio/index.html",
-    "main.763c8aab.css.map": "/portfolio/static/css/main.763c8aab.css.map",
-    "main.ec628875.js.map": "/portfolio/static/js/main.ec628875.js.map",
-    "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
+    "main.css": "/static/css/main.7bc13342.css",
+    "main.js": "/static/js/main.a82ac852.js",
+    "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "static/media/coding.png": "/static/media/coding.9078f3e9dcde5b6ec09e.png",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/wallet-print.png": "/static/media/wallet-print.c8910eea7f73aa13408b.png",
+    "static/media/notten-print.png": "/static/media/notten-print.24143b6138c3a88c8c4e.png",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/icon-header.png": "/static/media/icon-header.cb2e10c5d85082c6dc5e.png",
+    "static/media/icon.jpg": "/static/media/icon.63d775e273c3437604ea.jpg",
+    "static/media/bootstrap.png": "/static/media/bootstrap.3fa946b621297cd902db.png",
+    "static/media/html.png": "/static/media/html.ab1cdadaefe6ad9fd95a.png",
+    "static/media/js.png": "/static/media/js.854d47751eb61d44ef81.png",
+    "static/media/PHP.png": "/static/media/PHP.502964ac585cdadcaeb0.png",
+    "static/media/sql.png": "/static/media/sql.1865ef861441bf54fd8e.png",
+    "static/media/nodeJS.png": "/static/media/nodeJS.1b7be8a8540f3b066bea.png",
+    "index.html": "/index.html",
+    "main.7bc13342.css.map": "/static/css/main.7bc13342.css.map",
+    "main.a82ac852.js.map": "/static/js/main.a82ac852.js.map",
+    "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.763c8aab.css",
-    "static/js/main.ec628875.js"
+    "static/css/main.7bc13342.css",
+    "static/js/main.a82ac852.js"
   ]
 }
