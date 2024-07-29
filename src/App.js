@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import iconHeader from './img/icon-header.png';
 import photo from './img/icon.jpg';
 import coding from './img/coding.png';
@@ -8,17 +8,33 @@ import Icons from './icons.js';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
-  document.addEventListener('DOMContentLoaded', () => {
+  useEffect(() => {
+    const copyEmailButton = document.getElementById('copyEmailButton');
+    if (copyEmailButton) {
+      copyEmailButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const email = 'barbosajesse419@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+          const copyMessage = document.getElementById('copyMessage');
+          if (copyMessage) {
+            copyMessage.style.display = 'inline';
+            setTimeout(() => {
+              copyMessage.style.display = 'none';
+            }, 2000);
+          }
+        }).catch(err => {
+          console.error('Erro ao copiar texto: ', err);
+        });
+      });
+    }
+
     const sections = document.querySelectorAll('.fade-in');
-
-    const options = {
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
+    const options = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('appear');
@@ -27,9 +43,7 @@ function App() {
       });
     }, options);
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    sections.forEach(section => observer.observe(section));
 
     const navLinks = document.querySelectorAll('.nav-item');
     navLinks.forEach(link => {
@@ -37,10 +51,22 @@ function App() {
         event.preventDefault();
         const targetId = link.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
-  });
+
+    // Clean up event listeners on component unmount
+    return () => {
+      if (copyEmailButton) {
+        copyEmailButton.removeEventListener('click', () => {});
+      }
+      navLinks.forEach(link => {
+        link.removeEventListener('click', () => {});
+      });
+    };
+  }, []);
 
   return (
     <div className="App">
@@ -69,7 +95,7 @@ function App() {
           </div>
         </section>
         <section id="skills">
-        <h2 className="josefin-sans text-light text-center fw-bolder my-4 mt-4 opacity-75">Minhas habilidades</h2>
+          <h2 className="josefin-sans text-light text-center fw-bolder my-4 mt-4 opacity-75">Minhas habilidades</h2>
           <div className="container-fluid flex-grow-1">
             <div className="row justify-content-center align-items-center mt-5">
               <div className="container-fluid">
@@ -133,7 +159,20 @@ function App() {
         </section>
       </main>
       <footer className="text-center text-light fw-semibold border-bottom border-5 border-success">
-        <p className="opacity-75">Jessé Barbosa © 2024 | Todos os direitos reservados.</p>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-4 d-flex text-start align-items-center">
+              <p>Jessé Barbosa © 2024 | Todos os direitos reservados.</p>
+            </div>
+            <div className="icones col-8 d-flex text-end align-items-center pb-4">
+              <span id="copyMessage" className="copy-message">Copiado!</span>
+              <a href="#about" id="copyEmailButton" className="icon-link icon-link-hover"><i className="bi bi-envelope-fill text-white fs-4"></i></a>
+              <a href="https://github.com/jesse-barbosa" target="_blank" rel="noopener noreferrer" className="icon-link icon-link-hover"><i className="bi bi-github text-white fs-4"></i></a>
+              <a href="https://www.linkedin.com/in/jesse-barbosa-moreira-129446274/" target="_blank" rel="noopener noreferrer" className="icon-link icon-link-hover"><i className="bi bi-linkedin text-white fs-4"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=5533984238958" target="_blank" rel="noopener noreferrer" className="icon-link icon-link-hover"><i className="bi bi-whatsapp text-white fs-4"></i></a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );

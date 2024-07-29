@@ -116,7 +116,6 @@ section {
   margin: 30px;
 }
 
-
 .about {
   margin-top: 10rem;
 }
@@ -134,3 +133,23 @@ footer {
   margin-top: 10rem;
 }
 
+.icones {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icones i {
+  transition: all 0.2s;
+  margin: 0 0.3rem;
+}
+
+.icones i:hover {
+  transform: scale(1.1);
+}
+
+.copy-message {
+  display: none;
+  color: #4caf50;
+  font-size: 0.9em;
+}
