@@ -2,6 +2,7 @@ import React from 'react';
 import htmlIcon from './img/languages/html.png';
 import cssIcon from './img/languages/css.png';
 import jsIcon from './img/languages/js.png';
+import typescriptIcon from './img/languages/typescript.png';
 import bootstrapIcon from './img/languages/bootstrap.png';
 import reactIcon from './img/languages/react.png';
 import nodeIcon from './img/languages/nodeJS.png';
@@ -12,6 +13,7 @@ const iconData = [
   { src: htmlIcon, alt: 'HTML', class: 'ms-5 ps-3' },
   { src: cssIcon, alt: 'CSS' },
   { src: jsIcon, alt: 'JavaScript' },
+  { src: typescriptIcon, alt: 'Typescript' },
   { src: bootstrapIcon, alt: 'Bootstrap' },
   { src: reactIcon, alt: 'SQL' },
   { src: nodeIcon, alt: 'NodeJS' },

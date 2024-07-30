@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 /* Animações */
-
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -10,93 +9,153 @@
     transform: translateX(-15%);
   }
 }
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(10%);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 /* Estilos globais */
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+.body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  overflow-x: hidden;
+}
+
 .App {
-  background-color: #000000;
+  background-color: #000;
   min-height: 100vh;
-  min-width: 100vh;
 }
+
 .josefin-sans {
-  font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
+.bg-darker {
+  background-color: rgba(26, 26, 26, 0.6) !important ;
+}
+
 .text-green {
   color: #4caf50;
-}
-.bg-darker {
-  background-color:rgba(26, 26, 26, 0.6);
-  /*  rgba(26, 26, 26, 0.6) */
 }
 
 /* Estilo para o cabeçalho */
 header {
-  z-index: 1;
   position: sticky;
-  top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  top: 10px;
+  z-index: 1;
+  margin-top: 2.6rem;
+  animation: slide-top 0.5s ease-in-out;
 }
-.icon-header {
-  height: 45px;
 
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
+.nav-brand img {
+  max-height: 45px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .nav-item {
   text-decoration: none;
-  margin: 0px 10px;
-  font-size: 18px;
   color: #e1e1e1;
-  font-family: inherit;
-  font-weight: 800;
-  cursor: pointer;
-  position: relative;
-  border: none;
-  background: none;
-  text-transform: uppercase;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: color;
+  font-weight: 600;
+  transition: color 0.2s;
 }
-
-.nav-item:focus:after,
-.nav-item:hover:after {
-  width: 100%;
-  left: 0%;
+.nav-item:hover {
+  color: rgb(255, 0, 0);
 }
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 0;
+  }
 
-.nav-item:after {
-  content: "";
-  pointer-events: none;
-  bottom: 10px;
-  left: 50%;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background-color: #fff;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: width, left;
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-brand,
+  .nav-list {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
 }
 
 /* Main */
 section {
-  margin-top: 10rem;
+  margin-top: 7.5rem;
+  animation: slide-down 0.5s ease-in;
 }
-.hand {
-  display: inline-block;
-  animation: hand 1s ease-out;
-}
+
 .title {
   font-size: 60pt;
   letter-spacing: 6pt;
   text-transform: uppercase;
   font-weight: 100;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
 
 /* Estilo para o banner com rolagem infinita */
 .scrolling-banner {
@@ -116,32 +175,56 @@ section {
   margin: 30px;
 }
 
+/* Estilos para os projetos */
+main .projects .project {
+  opacity: 0;
+  margin-top: 7.5rem;
+  transform: translateX(10%);
+  transition: opacity 0.2s ease, transform 2s ease;
+}
+main .projects .project.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* About Section */
 .about {
   margin-top: 10rem;
+  padding: 20px;
+  text-align: center;
 }
+
 .about p {
-  font-size: 14pt;
   font-size: 16pt;
 }
+
 .photo {
   border-radius: 2rem;
-  height: 400px;
+  max-height: 400px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* Estilos para o footer */
 footer {
   margin-top: 10rem;
+  padding: 10px 20px;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .icones {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  gap: 10px;
 }
 
 .icones i {
-  transition: all 0.2s;
-  margin: 0 0.3rem;
+  transition: transform 0.2s;
 }
 
 .icones i:hover {
@@ -152,4 +235,16 @@ footer {
   display: none;
   color: #4caf50;
   font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .icones {
+    justify-content: center;
+  }
 }
