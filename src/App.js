@@ -130,7 +130,7 @@ function App() {
                   <hr />
                     <div className="row">
                       <div className="col-md-9 col-12 project-description p-4">
-                        <h1 className="fw-bolder text-light text-start my-5">Wallet</h1>
+                        <h1 className="fw-bolder text-light text-start my-5">Monyra</h1>
                           <p className="text-light fs-5">
                             Este foi meu primeiro aplicativo feito com React-native, usei PHP e JavaScript para o BackEnd, e os recursos do React-native para o FrontEnd.
                           </p>
