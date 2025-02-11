@@ -70,6 +70,23 @@ function App() {
     };
   }, []);
 
+  const projects = [
+    {
+      name: 'Monyra',
+      description: 'Este foi meu primeiro aplicativo feito com React-native, usei PHP e JavaScript para o BackEnd, e os recursos do React-native para o FrontEnd.',
+      technologies: ['React-native', 'JavaScript', 'PHP'],
+      platforms: ['Android', 'iOS', 'PC'],
+      image: '/assets/projectPrints/monyraPrint.png',
+    },
+    {
+      name: 'Notten',
+      description: 'Este é um aplicativo Desktop de anotações feito com HTML, CSS, Bootstrap, JavaScript, e PHP para o Back-end.',
+      technologies: ['Electron', 'HTML', 'Bootstrap', 'CSS', 'JavaScript', 'PHP'],
+      platforms: ['PC'],
+      image: '/assets/projectPrints/nottenPrint.png',
+    },
+  ];
+
   return (
     <div className="App">
       <header>
@@ -117,52 +134,41 @@ function App() {
           </div>
         </section>
         <section id="projects">
-          <div className="container w-75 rounded-4">
+        <div className="container w-75 rounded-4">
             <div className="row justify-content-center align-items-center mt-5">
-                <div className="projects">
-                  <div className="project mt-1">
-                  <hr />
+              <div className="projects">
+                {projects.map((project, index) => (
+                  <div key={index} className="project mt-1">
+                    <hr />
                     <div className="row">
                       <div className="col-md-9 col-12 project-description p-4">
-                        <h1 className="fw-bolder text-light text-start my-5">Monyra</h1>
-                          <p className="text-light fs-5">
-                            Este foi meu primeiro aplicativo feito com React-native, usei PHP e JavaScript para o BackEnd, e os recursos do React-native para o FrontEnd.
-                          </p>
+                        <h1 className="fw-bolder text-light text-start my-5">{project.name}</h1>
+                        <p className="text-light fs-5">{project.description}</p>
                       </div>
-                      <div className="col-md-3 align-content-end">
-                      <ul>
-                        <li className="list-group-item text-secondary fw-bold font-monospace my-1">Tecnologias</li>
-                        <li className="list-group-item text-light">React-native, JavaScript e PHP</li>
-                        <br />
-                        <li className="list-group-item text-secondary fw-bold font-monospace my-1">Plataformas</li>
-                        <li className="list-group-item text-light">Android e PC</li>
-                      </ul>
+                      <div className="col-md-3 align-content-end align-items-center">
+                        <ul>
+                          <li className="list-group-item">
+                            <span className="text-secondary fw-bold font-monospace my-1">Tecnologias:</span>
+                            <br />
+                          </li>
+                          <li className="list-group-item">
+                            {project.technologies.join(', ')}
+                            <br />
+                            <br />
+                          </li>
+                          <li className="list-group-item">
+                            <span className="text-secondary fw-bold font-monospace my-1">Plataforma:</span>
+                          </li>
+                          <li className="list-group-item">
+                            {project.platforms.join(', ')}
+                          </li>
+                        </ul>
                       </div>
-                      </div>
-                      <img src="/assets/projectPrints/monyraPrint.png" height="20%" className="d-block w-100 rounded-4" alt="..."></img>
+                    </div>
+                    <img src={project.image} height="20%" className="d-block w-100 rounded-4" alt="..." />
                   </div>
-                  <div className="project">
-                  <hr />
-                    <div className="row">
-                      <div className="col-md-9 col-12 project-description p-4">
-                        <h1 className="fw-bolder text-light text-start my-5">Notten</h1>
-                          <p className="text-light fs-5">
-                            Este é um aplicativo Desktop de anotações feito com HTML, CSS, Bootstrap, JavaScript, e PHP para o Back-end.
-                          </p>
-                      </div>
-                      <div className="col-md-3 align-content-end">
-                      <ul>
-                        <li className="list-group-item text-secondary fw-bold font-monospace my-1">Tecnologias</li>
-                        <li className="list-group-item text-light">Electron, HTML, Bootstrap, CSS, JavaScript e PHP</li>
-                        <br />
-                        <li className="list-group-item text-secondary fw-bold font-monospace my-1">Plataformas</li>
-                        <li className="list-group-item text-light">PC</li>
-                      </ul>
-                      </div>
-                      </div>
-                      <img src="/assets/projectPrints/nottenPrint.png" height="20%" className="d-block w-100 rounded-4" alt="..."></img>
-                  </div>
-                </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
