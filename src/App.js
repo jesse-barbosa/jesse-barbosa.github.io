@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Icons from './icons.js';
+import Icons from './components/icons.js';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
