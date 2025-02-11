@@ -1,11 +1,5 @@
 import React, { useEffect } from 'react';
-import iconHeader from './img/icon-header.png';
-import photo from './img/icon.jpg';
-import coding from './img/coding.png';
-import walletPrint from './img/wallet-print.png';
-import nottenPrint from './img/notten-print.png';
 import Icons from './icons.js';
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -81,7 +75,7 @@ function App() {
       <header>
         <nav id="navbar">
           <a href="index.html" className="nav-brand me-auto">
-            <img src={iconHeader} alt="icon" />
+            <img src="/assets/icon.png" alt="icon" />
           </a>
         <ul className="nav-list mt-2 me-5">
           <li>
@@ -104,8 +98,8 @@ function App() {
                 <p className="title text-light mt-5 mb-0">Web Developer</p>
                 <p className="text-light fs-4 opacity-75 w-75">Minha paixão é criar experiências visuais incríveis que cativem os usuários na internet. 👨‍💻</p>
               </div>
-              <div className="col-md-4">
-                <img src={coding} alt="Coding..." height="400px"></img>
+              <div className="col-md-4 text-center">
+                <img src="/assets/coding.png" alt="Coding..." height="400px"></img>
               </div>
             </div>
           </div>
@@ -145,7 +139,7 @@ function App() {
                       </ul>
                       </div>
                       </div>
-                      <img src={walletPrint} height="20%" className="d-block w-100 rounded-4" alt="..."></img>
+                      <img src="/assets/projectPrints/monyraPrint.png" height="20%" className="d-block w-100 rounded-4" alt="..."></img>
                   </div>
                   <div className="project">
                   <hr />
@@ -166,7 +160,7 @@ function App() {
                       </ul>
                       </div>
                       </div>
-                      <img src={nottenPrint} height="20%" className="d-block w-100 rounded-4" alt="..."></img>
+                      <img src="/assets/projectPrints/nottenPrint.png" height="20%" className="d-block w-100 rounded-4" alt="..."></img>
                   </div>
                 </div>
             </div>
@@ -176,7 +170,7 @@ function App() {
           <div className="container bg-darker rounded-4 py-5">
             <div className="row">
               <div className="col-md-6 text-center">
-                <img className="photo" src={photo} alt="Foto de perfil"></img>
+                <img className="photo" src="/assets/photo.jpg" alt="Foto de perfil"></img>
               </div>
               <div className="col-md-5 text-center">
                 <h2 className="text-light fw-bolder mt-4">Sobre mim</h2>
