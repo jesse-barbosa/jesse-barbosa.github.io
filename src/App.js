@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Icons from './components/icons.js';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -188,6 +187,22 @@ function App() {
             </div>
           </div>
         </section>
+        <section id="contact" className="contact-form py-5 text-light text-center">
+        <div className="container w-50 bg-dark p-4 border-ro">
+          <h2 className="fw-bold mb-4">Entre em Contato</h2>
+          <form>
+            <div className="mb-3 text-start">
+              <label htmlFor="userName" className="form-label">Nome</label>
+              <input type="text" className="form-control" id="userName" placeholder="Digite seu nome" required />
+            </div>
+            <div className="mb-3 text-start">
+              <label htmlFor="userMessage" className="form-label">Mensagem</label>
+              <textarea className="form-control" id="userMessage" rows="4" placeholder="Digite sua mensagem" required></textarea>
+            </div>
+            <button type="submit" className="btn btn-success">Enviar Mensagem</button>
+          </form>
+        </div>
+      </section>
       </main>
       <footer className="text-center text-light fw-semibold border-bottom border-5 border-success">
         <div className="container-fluid">
