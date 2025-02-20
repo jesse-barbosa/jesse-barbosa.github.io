@@ -1,10 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icons from './components/icons.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("https://jesse-barbosa.infinityfreeapp.com/save_contact.php", { 
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, message })
+    });
+
+    console.log(`Data: `, data)
+    console.log(`Response: `, response)
+
+    const data = await response.json();
+    console.log(`Data: `, data)
+    console.log(`Response: `, response)
+    setResponseMessage(data.message);
+
+    if (data.success) {
+      setName('');
+      setMessage('');
+    }
+  };
+
   useEffect(() => {
 
     // Feature para copiar email na área de transferência do usuário quando clicar no botão copyEmailButton
@@ -190,16 +217,33 @@ function App() {
         <section id="contact" className="py-5 text-light text-center">
         <div className="contactForm container p-4 rounded-3">
           <h2 className="fw-bold mb-4">Entre em Contato</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-3 text-start">
               <label htmlFor="userName" className="form-label">Nome</label>
-              <input type="text" className="form-control" id="userName" placeholder="Digite seu nome" required />
+              <input 
+              type="text" 
+              className="form-control" 
+              id="userName" 
+              placeholder="Digite seu nome" 
+              value={name} 
+              onChange={(e) => setName(e.target.value)}
+              required 
+            />
             </div>
             <div className="mb-3 text-start">
               <label htmlFor="userMessage" className="form-label">Mensagem</label>
-              <textarea className="form-control" id="userMessage" rows="4" placeholder="Digite sua mensagem" required></textarea>
+              <textarea 
+              className="form-control" 
+              id="userMessage" 
+              rows="4" 
+              placeholder="Digite sua mensagem" 
+              value={message} 
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            ></textarea>
             </div>
             <button type="submit" className="btn btn-success">Enviar Mensagem</button>
+            {responseMessage && <p className="mt-3">{responseMessage}</p>}
           </form>
         </div>
       </section>
