@@ -208,6 +208,66 @@ main .projects .project.animate {
   object-fit: cover;
 }
 
+.contactForm {
+  background: rgba(14, 14, 14, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8) !important;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease-in-out;
+}
+
+.contactForm input:focus::placeholder,
+.contactForm textarea:focus::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.contactForm button {
+  width: 100%;
+  padding: 12px;
+  background: #008f39;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.contactForm button:hover {
+  background: #00b050;
+}
+
 /* Estilos para o footer */
 footer {
   margin-top: 10rem;

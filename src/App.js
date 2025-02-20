@@ -187,8 +187,8 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="contact" className="contact-form py-5 text-light text-center">
-        <div className="container w-50 bg-dark p-4 border-ro">
+        <section id="contact" className="py-5 text-light text-center">
+        <div className="contactForm container p-4 rounded-3">
           <h2 className="fw-bold mb-4">Entre em Contato</h2>
           <form>
             <div className="mb-3 text-start">
