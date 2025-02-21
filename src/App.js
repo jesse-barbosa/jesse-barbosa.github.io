@@ -19,7 +19,7 @@ function App() {
 
     try {
         console.log("Enviando dados:", { name, message });
-        const response = await fetch("https://jesse-barbosa.infinityfreeapp.com/save_contact.php", {
+        const response = await fetch("http://jesse-barbosa.infinityfreeapp.com/save_contact.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
