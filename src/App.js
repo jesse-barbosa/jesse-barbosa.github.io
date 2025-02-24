@@ -9,35 +9,29 @@ function App() {
   const [message, setMessage] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     if (!name || !message) {
         setResponseMessage("Por favor, preencha todos os campos.");
         return;
     }
 
-    const formData = new URLSearchParams();
+    const formData = new FormData();
     formData.append("name", name);
     formData.append("message", message);
 
     try {
-        console.log("Enviando dados:", formData.toString());
+        console.log("Enviando dados:", formData);
 
         const response = await fetch("http://jesse-barbosa.infinityfreeapp.com/save_contact.php", {
             method: "POST",
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Type": "multipart/form-data", // Importante para $_POST funcionar
             },
-            body: formData.toString(), // Convert FormData to URL-encoded string
+            body: formData,
         });
 
-        if (!response.ok) {
-            throw new Error(`Erro na requisição: ${response.status}`);
-        }
-
         const data = await response.json();
-        console.log(`Data: `, data);
+        console.log("Resposta do servidor:", data);
         setResponseMessage(data.message);
 
         if (data.success) {
@@ -47,8 +41,9 @@ function App() {
     } catch (error) {
         console.error("Erro ao enviar mensagem:", error);
         setResponseMessage("Erro ao conectar ao servidor.");
-      }
-    };
+    }
+};
+
 
   useEffect(() => {
 
