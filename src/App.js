@@ -24,6 +24,9 @@ function App() {
 
         const response = await fetch("http://jesse-barbosa.infinityfreeapp.com/save_contact.php", {
             method: "POST",
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
             body: formData,
         });
 
