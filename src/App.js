@@ -24,9 +24,6 @@ function App() {
 
         const response = await fetch("http://jesse-barbosa.infinityfreeapp.com/save_contact.php", {
             method: "POST",
-            headers: {
-                "Content-Type": "multipart/form-data", // Importante para $_POST funcionar
-            },
             body: formData,
         });
 
@@ -41,9 +38,8 @@ function App() {
     } catch (error) {
         console.error("Erro ao enviar mensagem:", error);
         setResponseMessage("Erro ao conectar ao servidor.");
-    }
-};
-
+      }
+  };
 
   useEffect(() => {
 
