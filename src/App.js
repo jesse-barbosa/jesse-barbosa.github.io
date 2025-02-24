@@ -17,14 +17,19 @@ function App() {
         return;
     }
 
+    const formData = new URLSearchParams();
+    formData.append("name", name);
+    formData.append("message", message);
+
     try {
-        console.log("Enviando dados:", { name, message });
+        console.log("Enviando dados:", formData.toString());
+
         const response = await fetch("http://jesse-barbosa.infinityfreeapp.com/save_contact.php", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: JSON.stringify({ name, message }),
+            body: formData.toString(), // Convert FormData to URL-encoded string
         });
 
         if (!response.ok) {
@@ -43,7 +48,7 @@ function App() {
         console.error("Erro ao enviar mensagem:", error);
         setResponseMessage("Erro ao conectar ao servidor.");
       }
-  };
+    };
 
   useEffect(() => {
 
