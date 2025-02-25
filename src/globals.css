@@ -216,7 +216,7 @@ main .projects .project.animate {
   border-radius: 12px;
   padding: 30px;
   width: 80%;
-  max-width: 400px;
+  max-width: 1000px !important;
   text-align: center;
   transition: transform 0.3s ease-in-out;
 }
