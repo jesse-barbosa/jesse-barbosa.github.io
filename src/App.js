@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 function App() {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
 
@@ -15,7 +16,7 @@ function App() {
       return;
     }
   
-    const url = `http://jesse-barbosa.infinityfreeapp.com/save_contact.php?name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}`;
+    const url = `http://jesse-barbosa.infinityfreeapp.com/save_contact.php?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -216,6 +217,19 @@ function App() {
               onChange={(e) => setName(e.target.value)}
               required 
             />
+
+            </div>
+            <div className="mb-3 text-start">
+              <label htmlFor="userName" className="form-label">Email</label>
+              <input 
+                type="email" 
+                className="form-control" 
+                id="userEmail" 
+                placeholder="Seu e-mail (opcional)" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)}
+                required 
+              />
             </div>
             <div className="mb-3 text-start">
               <label htmlFor="userMessage" className="form-label">Mensagem</label>
