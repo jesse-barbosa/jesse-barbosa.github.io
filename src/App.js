@@ -213,7 +213,7 @@ function App() {
                 type="email" 
                 className="form-control" 
                 id="userEmail" 
-                placeholder="Seu e-mail (opcional)" 
+                placeholder="Seu e-mail" 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)}
                 required 
