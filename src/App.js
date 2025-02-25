@@ -22,12 +22,8 @@ function App() {
     try {
         console.log("Enviando dados:", formData);
 
-        const response = await fetch("http://jesse-barbosa.infinityfreeapp.com/save_contact.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
-            body: formData,
+        const response = await fetch(`http://jesse-barbosa.infinityfreeapp.com/save_contact.php?name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}`, {
+            method: "GET",
         });
 
         const data = await response.json();
