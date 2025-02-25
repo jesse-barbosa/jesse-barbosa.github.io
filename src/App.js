@@ -232,10 +232,11 @@ function App() {
             ></textarea>
             </div>
             {/* CAPTCHA */}
-            <div className="d-flex justify-content-center mb-3">
+            <div className="d-flex justify-content-start ms-2 m-4">
               <ReCAPTCHA
                 sitekey="6LezHuIqAAAAANgXcDH7N-YEzsuQBTMiMBfpiUaj"
                 onChange={(value) => setCaptchaValue(value)}
+                theme="dark"
               />
             </div>
             <button type="submit" className="btn btn-success">Enviar Mensagem</button>
