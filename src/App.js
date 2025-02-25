@@ -30,66 +30,45 @@ function App() {
   };
 
   useEffect(() => {
-
-    // Feature para copiar email na área de transferência do usuário quando clicar no botão copyEmailButton
+    const copyEmail = () => {
+      const email = 'barbosajesse419@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const copyMessage = document.getElementById('copyMessage');
+        if (copyMessage) {
+          copyMessage.style.display = 'inline';
+          setTimeout(() => {
+            copyMessage.style.display = 'none';
+          }, 2000);
+        }
+      }).catch(err => {
+        console.error('Erro ao copiar texto: ', err);
+      });
+    };
+  
     const copyEmailButton = document.getElementById('copyEmailButton');
     if (copyEmailButton) {
-      copyEmailButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        const email = 'barbosajesse419@gmail.com';
-        navigator.clipboard.writeText(email).then(() => {
-          const copyMessage = document.getElementById('copyMessage');
-
-          // Se o usuário copiar o email, a mensagem copyMessage aparece por 2 segundos
-          if (copyMessage) {
-            copyMessage.style.display = 'inline';
-            setTimeout(() => {
-              copyMessage.style.display = 'none';
-            }, 2000);
-          }
-          // Caso não dê certo de copiar, retorna um erro
-        }).catch(err => {
-          console.error('Erro ao copiar texto: ', err);
-        });
-      });
+      copyEmailButton.addEventListener('click', copyEmail);
     }
-    // Função para animar os itens
-    function animateVisibleItems() {
-      const project = document.querySelectorAll('.project');
-
-      project.forEach(item => {
-          const rect = item.getBoundingClientRect();
-          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-          if (rect.top >= 0 && rect.top <= windowHeight) {
-              item.classList.add('animate');
-          }
-      });
-  }
-  // Chama a função quando o usuário rolar a tela pra baixo
-  animateVisibleItems();
-  window.addEventListener('scroll', animateVisibleItems);
-
-    // Feature para direcionar o usuário a uma seção da página pelos links do nav
-    const navLinks = document.querySelectorAll('.nav-item');
-    navLinks.forEach(link => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+  
+    const animateVisibleItems = () => {
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top >= 0 && rect.top <= windowHeight) {
+          item.classList.add('animate');
         }
       });
-    });
-
-
+    };
+  
+    animateVisibleItems();
+    window.addEventListener('scroll', animateVisibleItems);
+  
     return () => {
       if (copyEmailButton) {
-        copyEmailButton.removeEventListener('click', () => {});
+        copyEmailButton.removeEventListener('click', copyEmail);
       }
-      navLinks.forEach(link => {
-        link.removeEventListener('click', () => {});
-      });
+      window.removeEventListener('scroll', animateVisibleItems);
     };
   }, []);
 
