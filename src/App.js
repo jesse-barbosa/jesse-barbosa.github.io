@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 import Icons from './components/icons.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
@@ -9,13 +10,21 @@ function App() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
+  const [captchaValue, setCaptchaValue] = useState(null);
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     if (!name || !message) {
       setResponseMessage("Por favor, preencha todos os campos.");
       return;
     }
-  
+
+    if (!captchaValue) {
+      setResponseMessage("Por favor, confirme que você não é um robô.");
+      return;
+    }
+
     const url = `http://jesse-barbosa.infinityfreeapp.com/save_contact.php?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
@@ -242,6 +251,13 @@ function App() {
               onChange={(e) => setMessage(e.target.value)}
               required
             ></textarea>
+            </div>
+            {/* CAPTCHA */}
+            <div className="d-flex justify-content-center mb-3">
+              <ReCAPTCHA
+                sitekey="6LezHuIqAAAAANgXcDH7N-YEzsuQBTMiMBfpiUaj"
+                onChange={(value) => setCaptchaValue(value)}
+              />
             </div>
             <button type="submit" className="btn btn-success">Enviar Mensagem</button>
             {responseMessage && <p className="mt-3">{responseMessage}</p>}
