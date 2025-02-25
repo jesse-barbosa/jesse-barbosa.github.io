@@ -12,6 +12,12 @@ function App() {
   const [responseMessage, setResponseMessage] = useState('');
   const [captchaValue, setCaptchaValue] = useState(null);
 
+  const handleMessageChange = (e) => {
+    if (e.target.value.length <= 1000) {
+      setMessage(e.target.value);
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -222,14 +228,17 @@ function App() {
             <div className="mb-3 text-start">
               <label htmlFor="userMessage" className="form-label">Mensagem</label>
               <textarea 
-              className="form-control" 
-              id="userMessage" 
-              rows="4" 
-              placeholder="Digite sua mensagem" 
-              value={message} 
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            ></textarea>
+                className="form-control" 
+                id="userMessage" 
+                rows="4" 
+                placeholder="Digite sua mensagem" 
+                value={message} 
+                onChange={handleMessageChange} 
+                required
+              ></textarea>
+              <div className="text-end mt-1">
+                <span style={{ color: message.length === 1000 ? 'red' : 'white' }}>{message.length}/1000</span>
+              </div>
             </div>
             {/* CAPTCHA */}
             <div className="d-flex justify-content-start ms-2 m-4">
