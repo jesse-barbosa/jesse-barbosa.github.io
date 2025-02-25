@@ -248,7 +248,7 @@ function App() {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4 d-flex text-start align-items-center">
-              <p>Jessé Barbosa © 2024 | Todos os direitos reservados.</p>
+              <p>Jessé Barbosa © 2025 | Todos os direitos reservados.</p>
             </div>
             <div className="icones col-md-8 d-flex justify-content-end align-items-center pb-4">
               <span id="copyMessage" className="copy-message">Copiado!</span>
