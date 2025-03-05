@@ -19,7 +19,7 @@ const iconData = [
 const repeatArray = (arr, times) => Array.from({ length: times }, () => arr).flat();
 
 const Icons = () => {
-  const repeatedIcons = repeatArray(iconData, 3);
+  const repeatedIcons = repeatArray(iconData, 5);
 
   return (
     <div className="scrolling-content py-4">
