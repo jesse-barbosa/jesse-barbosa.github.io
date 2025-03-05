@@ -80,6 +80,13 @@ function App() {
 
   const projects = [
     {
+      name: 'FII Trader',
+      description: 'Este sistema fundado por Marcos Rodrigues Alves tem como objetivo gerenciar e fazer análises inteligentes de oportunidades de compra e venda de Fundos Imobiliários com base em fórmulas e algorítmos avançados.',
+      technologies: ['NextJS', 'NestJS'],
+      platforms: ['Web'],
+      image: '/assets/projectPrints/fiiTraderPrint.png',
+    },
+    {
       name: 'Monyra',
       description: 'Este foi meu primeiro aplicativo feito com React-native, usei PHP e JavaScript para o BackEnd, e os recursos do React-native para o FrontEnd.',
       technologies: ['React-native', 'JavaScript', 'PHP'],
