@@ -87,6 +87,13 @@ function App() {
       image: '/assets/projectPrints/fiiTraderPrint.png',
     },
     {
+      name: 'TechMix',
+      description: 'Este é um sistema de e-commerce para lojas de tecnologia, com um painel administrativo desenvolvido em Laravel para gerenciamento e atendimento da loja e um aplicativo mobile feito com React-Native para clientes finais.',
+      technologies: ['React-native', 'JavaScript', 'Laravel/PHP'],
+      platforms: ['Android', 'iOS', 'PC'],
+      image: '/assets/projectPrints/techMixPrint.png',
+    },
+    {
       name: 'Monyra',
       description: 'Este foi meu primeiro aplicativo feito com React-native, usei PHP e JavaScript para o BackEnd, e os recursos do React-native para o FrontEnd.',
       technologies: ['React-native', 'JavaScript', 'PHP'],
