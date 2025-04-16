@@ -156,7 +156,6 @@ section {
   }
 }
 
-
 /* Estilo para o banner com rolagem infinita */
 .scrolling-banner {
   white-space: nowrap;
@@ -186,6 +185,130 @@ main .projects .project.animate {
   opacity: 1;
   transform: translateX(0);
 }
+
+.timeline {
+  line-height: 1.4em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #ffffff;
+}
+
+.timeline-item {
+  padding-left: 60px;
+  position: relative;
+  transition: .5s;
+  cursor: pointer;
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.timeline-info {
+  font-size: 1.2em;
+  padding-bottom: 1em;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  cursor: pointer;
+  transition: .5s; 
+}
+
+.timeline-item .timeline-marker::before {
+  background: #121212;
+  border: 2px solid #4caf50;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  transition: .5s;
+}
+
+.timeline-item.selected .timeline-marker::before, 
+.timeline-item:hover .timeline-marker::before {
+  background: #4caf50;
+  border-color: #00b050;
+  transform: scale(1.2);
+}
+
+.timeline-item:not(:last-of-type) .timeline-marker::after {
+  content: "";
+  width: 2px;
+  background: rgba(76, 175, 80, 0.3);
+  display: block;
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 6px;
+  height: calc(100% - 15px);
+  z-index: 0;
+}
+
+.timeline-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.timeline-item.selected .timeline-content {
+  max-height: 1000px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.timeline-icon {
+  font-size: 26px;
+  position: absolute;
+  top: 10px;
+  left: 7px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.timeline-item.selected .timeline-icon, 
+.timeline-item:hover .timeline-icon {
+  color: #ffffff;
+}
+
+.timeline-item h4 {
+  margin: 0;
+  margin-bottom: .3em;
+  color: #fff;
+  font-weight: 800;
+}
+
+.timeline-info .location {
+  color: #4caf50;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  color: #e0e0e0;
+  font-size: 0.9em;
+}
+
+.timeline-content small {
+  display: block;
+  width: 100%;
+  color: #cccccc;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
 /* About Section */
 .about {
   margin-top: 10rem;

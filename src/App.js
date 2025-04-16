@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import Icons from './components/icons.js';
+import { HiOutlineAcademicCap } from 'react-icons/hi'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -109,6 +110,68 @@ function App() {
     },
   ];
 
+  useEffect(() => {
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach(item => {
+      item.addEventListener('click', () => {
+        timelineItems.forEach(i => i.classList.remove('selected'));
+        
+        item.classList.add('selected');
+        
+        const content = item.querySelector('.timeline-content');
+        if (content) {
+          content.style.opacity = '1';
+          content.style.visibility = 'visible';
+        }
+      });
+    });
+    
+    if (timelineItems.length > 0) {
+      timelineItems[0].classList.add('selected');
+    }
+    
+    return () => {
+      timelineItems.forEach(item => {
+        item.removeEventListener('click', () => {});
+      });
+    };
+  }, []);
+
+  const formations = [
+    {
+      title: 'Front-end em React',
+      location: 'Ada Tech',
+      details: 'Curso remoto da plataforma Ada Tech, onde o professor Walisson Silva aborda desde os conceitos básicos da Web e suas principais tecnologias até o React. Na primeira parte do curso, é ensinado sobre as linguagens HTML, CSS, JavaScript/TypeScript, desde de seus conceitos mais básicos, até as estruturas mais avançadas e atuais, incluindo os paradigmas de orientação a objetos e programação funcional. Na segunda parte do curso, por fim, é ensinado a ferramenta React por meio da exposição dos seus conceitos fundamentais aliada a projetos práticos que exploram e aprofundam cada um desses conceitos.',
+      period: '2025',
+    },
+    {
+      title: 'Módulo II - Desenvolvimento Web (Full Stack)',
+      location: 'SenacTEC',
+      details: 'Curso presencial em Teófilo Otoni, onde o professor Diego Jardim ensinou tecnologias avançadas para construção de sistemas Web, como HTML, CSS, Bootstrap e PHP, com exercícios práticos e trabalhos em equipe, sempre abordando as melhores e mais modernas práticas de POO.',
+      period: '2024',
+    },
+    {
+      title: 'Javascript [40 Horas]',
+      location: 'Curso em Vídeo',
+      details: 'Curso remoto da plataforma Curso em Vídeo, onde o professor Gustavo Guanabara apresenta a linguagem JavaScript, em um curso patrocinado pelo Google, voltado para iniciantes, o professor Gustavo Guanabara vai ensinar o conteúdo básico em 6 módulos que vão desde o conhecimento da linguagem até o uso de funções.',
+      period: '2024',
+    },
+    {
+      title: 'Módulo I - Desenvolvimento Web (Full Stack)',
+      location: 'SenacTEC',
+      details: 'Curso presencial em Teófilo Otoni, onde o professor Diego Jardim ensinou tecnologias avançadas para construção de sistemas Web, como HTML, CSS, Bootstrap e PHP, com exercícios práticos e trabalhos em equipe, sempre abordando as melhores e mais modernas práticas de POO.',
+      period: '2023',
+    },
+    {
+      title: 'Informática Completa 2.0',
+      location: 'CEBRAC',
+      details: 'Curso presencial em Teófilo Otoni, não envolve programação ou desenvolvimento, mas aborda conceitos básicos da informática, como hardware, software, redes, e segurança. Também foi ensinado a utilizar as ferramentas do Pacote Office e softwares simples de edição de imagens como o GIMP.',
+      period: '2021',
+    },
+  ]
+
   return (
     <div className="App">
       <header>
@@ -122,6 +185,9 @@ function App() {
           </li>
           <li>
           <a href="#projects" className="nav-item text-light fw-semibold">PROJETOS</a>
+          </li>
+          <li>
+          <a href="#formations" className="nav-item text-light fw-semibold">FORMAÇÕES</a>
           </li>
           <li>
           <a href="#about" className="nav-item text-light fw-semibold">SOBRE MIM</a>
@@ -194,6 +260,38 @@ function App() {
             </div>
           </div>
         </section>
+
+        <section id="formations" className="py-5">
+          <div className="container">
+            <h2 className="text-light fw-bold text-center mb-2">Minhas Formações</h2>
+            <p className="text-secondary text-center mb-5">Clique em uma formação para ver mais detalhes</p>
+            <ul className="timeline pt-4">
+              {formations.map((formation, index) => (
+                <li className={`timeline-item ${index === 0 ? 'selected' : ''}`} key={index}>
+                  <div className="timeline-info">
+                    <h4>{formation.title}</h4>
+                    <div className='flex-row'>
+                      <span className="location">{formation.location}</span>
+                      <small>
+                        {formation.period}
+                        <strong style={{ marginLeft: ".5em" }}> {formation.duration}</strong>
+                      </small>
+                    </div>
+                  </div>
+                  <div className="timeline-marker">
+                    <div className='timeline-icon'>
+                      <HiOutlineAcademicCap />
+                    </div>
+                  </div>
+                  <div className="timeline-content">
+                    <small>{formation.details}</small>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+        
         <section className="about" id="about">
           <div className="container bg-darker rounded-4 py-5">
             <div className="row">
