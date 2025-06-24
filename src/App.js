@@ -141,6 +141,12 @@ function App() {
 
   const formations = [
     {
+      title: 'Técnico em Desenvolvimento de Sistemas',
+      location: 'Senac',
+      details: 'Curso Técnico EAD do Senac com duração aproximada de 21 meses, voltado à criação, implementação e manutenção de software. É ensinado como planejar e desenvolver sistemas para desktop, web e bancos de dados (MySQL, SQL); além disso, certificações intermediárias de Assistente de Banco de Dados e Assistente de Desenvolvimento de Sistemas. Com métodos flexíveis, vídeos, podcasts e encontros ao vivo com tutores experientes.',
+      period: '2025',
+    },
+    {
       title: 'Front-end em React',
       location: 'Ada Tech',
       details: 'Curso remoto da plataforma Ada Tech, onde o professor Walisson Silva aborda desde os conceitos básicos da Web e suas principais tecnologias até o React. Na primeira parte do curso, é ensinado sobre as linguagens HTML, CSS, JavaScript/TypeScript, desde de seus conceitos mais básicos, até as estruturas mais avançadas e atuais, incluindo os paradigmas de orientação a objetos e programação funcional. Na segunda parte do curso, por fim, é ensinado a ferramenta React por meio da exposição dos seus conceitos fundamentais aliada a projetos práticos que exploram e aprofundam cada um desses conceitos.',
