@@ -228,6 +228,7 @@ function App() {
           </div>
         </section>
         <section id="projects">
+        <h2 className="text-light text-center fw-bold my-4">Alguns projetos</h2>
         <div className="container w-75 rounded-4">
             <div className="row justify-content-center align-items-center mt-5">
               <div className="projects">
