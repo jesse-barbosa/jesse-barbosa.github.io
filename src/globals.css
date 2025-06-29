@@ -83,7 +83,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -93,12 +93,14 @@ header {
 }
 
 .nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
-
 .nav-item {
   text-decoration: none;
   color: #e1e1e1;
