@@ -29,7 +29,7 @@ const LanguageSelector = () => {
         style={{ minWidth: "120px" }}
       >
         <span>{currentLang?.flag}</span>
-        <span className="d-none d-md-inline">{currentLang?.name}</span>
+        <span>{currentLang?.name}</span>
         <i className={`bi bi-chevron-${isOpen ? "up" : "down"}`}></i>
       </button>
 

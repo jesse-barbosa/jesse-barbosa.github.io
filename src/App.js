@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
 import Icons from "./components/icons.js"
@@ -155,7 +153,7 @@ function AppContent() {
           <a href="index.html" className="nav-brand me-auto">
             <img src="/assets/icon.png" alt="icon" />
           </a>
-          <ul className="nav-list mt-3 me-3">
+          <ul className="nav-list mt-3">
             <li>
               <a href="#skills" className="nav-item text-light fw-semibold">
                 {t.nav.skills}
