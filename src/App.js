@@ -86,33 +86,45 @@ function AppContent() {
   }, [])
 
   const projects = [
+      {
+      name: "Enerium",
+      description: t.projects.items[0].description,
+      technologies: ["NextJS", "React-native", "TypeScript", "Python", "Laravel/PHP"],
+      platforms: ["Web"],
+      images: [
+        "/assets/projectPrints/enerium-screenshots/intro-hero.png", 
+        "/assets/projectPrints/enerium-screenshots/dash-home.png",
+        "/assets/projectPrints/enerium-screenshots/dash-sustainability.png",
+        "/assets/projectPrints/enerium-screenshots/intro-benefits.png", 
+      ],
+    },
     {
       name: "FII Trader",
-      description: t.projects.items[0].description,
+      description: t.projects.items[1].description,
       technologies: ["NextJS", "NestJS"],
       platforms: ["Web"],
-      image: "/assets/projectPrints/fiiTraderPrint.png",
+      images: ["/assets/projectPrints/fiiTraderPrint.png"],
     },
     {
       name: "TechMix",
-      description: t.projects.items[1].description,
+      description: t.projects.items[2].description,
       technologies: ["React-native", "JavaScript", "Laravel/PHP"],
       platforms: ["Android", "iOS", "PC"],
-      image: "/assets/projectPrints/techMixPrint.png",
+      images: ["/assets/projectPrints/techMixPrint.png"],
     },
     {
       name: "Monyra",
-      description: t.projects.items[2].description,
+      description: t.projects.items[3].description,
       technologies: ["React-native", "JavaScript", "PHP"],
       platforms: ["Android", "iOS", "PC"],
-      image: "/assets/projectPrints/monyraPrint.png",
+      images: ["/assets/projectPrints/monyraPrint.png"],
     },
     {
       name: "Notten",
-      description: t.projects.items[3].description,
+      description: t.projects.items[4].description,
       technologies: ["Electron", "HTML", "Bootstrap", "CSS", "JavaScript", "PHP"],
       platforms: ["PC"],
-      image: "/assets/projectPrints/nottenPrint.png",
+      images: ["/assets/projectPrints/nottenPrint.png"],
     },
   ]
 
@@ -240,12 +252,51 @@ function AppContent() {
                         </ul>
                       </div>
                     </div>
-                    <img
-                      src={project.image || "/placeholder.svg"}
-                      height="20%"
-                      className="d-block w-100 rounded-4"
-                      alt="..."
-                    />
+                    <div id={`carousel${index}`} className="carousel slide" data-bs-ride="carousel">
+                      <div className="carousel-indicators">
+                        {project.images.map((_, imgIndex) => (
+                          <button
+                            key={imgIndex}
+                            type="button"
+                            data-bs-target={`#carousel${index}`}
+                            data-bs-slide-to={imgIndex}
+                            className={imgIndex === 0 ? "active" : ""}
+                            aria-current={imgIndex === 0 ? "true" : "false"}
+                            aria-label={`Slide ${imgIndex + 1}`}
+                          ></button>
+                        ))}
+                      </div>
+                      <div className="carousel-inner">
+                        {project.images.map((image, imgIndex) => (
+                          <div
+                            key={imgIndex}
+                            className={`carousel-item ${imgIndex === 0 ? "active" : ""}`}
+                          >
+                            <img
+                              src={image}
+                              className="d-block w-100 rounded-4"
+                              alt={`Slide ${imgIndex}`}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      {project.images.length > 1 && (
+                        <div className="carousel-controls">
+                          <button className="carousel-control-prev" type="button" data-bs-target={`#carousel${index}`} data-bs-slide="prev">
+                            <div className="carousel-interaction">
+                              <span className="carousel-control-prev-icon opacity-100" aria-hidden="true"></span>
+                            </div>
+                            <span className="visually-hidden">Previous</span>
+                          </button>
+                          <button className="carousel-control-next" type="button" data-bs-target={`#carousel${index}`} data-bs-slide="next">
+                            <div className="carousel-interaction">
+                              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            </div>
+                            <span className="visually-hidden">Next</span>
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
