@@ -271,6 +271,11 @@ export const translations = {
       platform: "Platform:",
       items: [
         {
+          name: "Enerium",
+          description:
+            "Tarafımdan tasarlanıp geliştirilen Enerium, Laravel, Next.js, React Native ve Python'da yapay zeka algoritmaları ile oluşturulmuş açık kaynaklı bir enerji optimizasyonu SaaS platformudur. Gerçek zamanlı olarak sanayi ve ofisler için kişiselleştirilmiş öneriler üretmek amacıyla eşzamansız işlem hatları, kestirimci analiz ve uyarlanabilir sezgisel yöntemler kullanır. Büyük emek ve özveriyle geliştirmekte olduğum bu projenin henüz kesin bir çıkış tarihi yok.",
+        },
+        {
           name: "FII Trader",
           description:
             "Marcos Rodrigues Alves tarafından kurulan bu sistem, gelişmiş formüller ve algoritmalara dayalı olarak Gayrimenkul Yatırım Fonu alım satım fırsatlarını yönetmeyi ve akıllı analizler yapmayı amaçlamaktadır.",
@@ -389,6 +394,11 @@ export const translations = {
       technologies: "Tecnologías:",
       platform: "Plataforma:",
       items: [
+        {
+          name: "Enerium",
+          description:
+            "Idealizado y desarrollado por mí, Enerium es un SaaS de código abierto para la optimización energética hecho con Laravel, Next.js, React Native y algoritmos de inteligencia artificial en Python. Utiliza pipelines asíncronos, análisis predictivo y heurísticas adaptativas para generar recomendaciones personalizadas en tiempo real para industrias y oficinas. Es un proyecto en el que estoy trabajando con mucho esfuerzo y dedicación, por lo tanto, aún no tiene una fecha de lanzamiento definida.",
+        },
         {
           name: "FII Trader",
           description:
