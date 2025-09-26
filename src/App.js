@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react"
-import ReCAPTCHA from "react-google-recaptcha"
+import { useEffect } from "react"
 import Icons from "./components/icons.js"
 import LanguageSelector from "./components/language-selector.js"
 import { LanguageProvider, useLanguage } from "./contexts/language-context.js"
@@ -12,32 +11,6 @@ import "bootstrap/dist/js/bootstrap.min.js"
 function AppContent() {
   const { currentLanguage } = useLanguage()
   const t = translations[currentLanguage]
-
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-  const [responseMessage, setResponseMessage] = useState("")
-  const [captchaValue, setCaptchaValue] = useState(null)
-
-  const handleMessageChange = (e) => {
-    if (e.target.value.length <= 1000) {
-      setMessage(e.target.value)
-    }
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    if (!name || !message) {
-      setResponseMessage(t.contact.fillAllFields)
-      return
-    }
-    if (!captchaValue) {
-      setResponseMessage(t.contact.confirmCaptcha)
-      return
-    }
-    const url = `http://jesse-barbosa.infinityfreeapp.com/save_contact.php?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&message=${encodeURIComponent(message)}`
-    window.open(url, "_blank")
-  }
 
   useEffect(() => {
     const copyEmail = () => {
@@ -349,70 +322,6 @@ function AppContent() {
                 />
               </div>
             </div>
-          </div>
-        </section>
-
-        <section id="contact" className="py-5 text-light text-center">
-          <div className="contactForm container p-4 rounded-3">
-            <h2 className="fw-bold mb-4">{t.contact.title}</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3 text-start">
-                <label htmlFor="userName" className="form-label">
-                  {t.contact.name}
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="userName"
-                  placeholder={t.contact.namePlaceholder}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-3 text-start">
-                <label htmlFor="userName" className="form-label">
-                  {t.contact.email}
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="userEmail"
-                  placeholder={t.contact.emailPlaceholder}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-3 text-start">
-                <label htmlFor="userMessage" className="form-label">
-                  {t.contact.message}
-                </label>
-                <textarea
-                  className="form-control"
-                  id="userMessage"
-                  rows="4"
-                  placeholder={t.contact.messagePlaceholder}
-                  value={message}
-                  onChange={handleMessageChange}
-                  required
-                ></textarea>
-                <div className="text-end mt-1">
-                  <span style={{ color: message.length === 1000 ? "red" : "white" }}>{message.length}/1000</span>
-                </div>
-              </div>
-              <div className="d-flex justify-content-start ms-2 m-4">
-                <ReCAPTCHA
-                  sitekey="6LezHuIqAAAAANgXcDH7N-YEzsuQBTMiMBfpiUaj"
-                  onChange={(value) => setCaptchaValue(value)}
-                  theme="dark"
-                />
-              </div>
-              <button type="submit" className="btn btn-success">
-                {t.contact.submit}
-              </button>
-              {responseMessage && <p className="mt-3">{responseMessage}</p>}
-            </form>
           </div>
         </section>
       </main>
