@@ -1,8 +1,7 @@
 <h1 align="center">Jessé Barbosa | Portfólio</h1>
 
-[![Site Preview](/public/assets/projectPrints/portfolioPrint.png)](https://jesse-barbosa.github.io/)
-[![Site Preview](/public/assets/projectPrints/portfolioPrint2.png)](https://jesse-barbosa.github.io/)
-Este é o meu portfólio, construído com [React](https://react.dev/), onde mostro um pouco dos meus projetos. Confira o site completo [aqui](https://jesse-barbosa.github.io/).
+[![Site Preview](/public/readmeImage.png)](https://jesse-barbosa.netlify.app/)
+Este é o meu portfólio, construído com [React](https://react.dev/), onde mostro um pouco dos meus projetos. Confira o site completo [aqui](https://jesse-barbosa.netlify.app/).
 
 ## Instalação e Execução
 
