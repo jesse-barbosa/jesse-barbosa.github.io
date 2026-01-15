@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+
+    --card: 18 18 18;
+    --card-foreground: 255 255 255;
+
+    --primary: 76 175 80; /* #4caf50 */
+    --primary-foreground: 0 0 0;
+
+    --secondary: 56 142 60;
+    --secondary-foreground: 255 255 255;
+
+    --muted: 120 120 120;
+    --muted-foreground: 180 180 180;
+
+    --border: 255 255 255;
+    --input: 255 255 255;
+
+    --ring: 76 175 80;
+  }
+}
+
+html,
+body {
+  /* Textos brancos */
+  color: white;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
