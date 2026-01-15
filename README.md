@@ -13,7 +13,7 @@ Este é o meu portfólio, construído com [React](https://react.dev/), onde most
 ### 1. Clone o Repositório
 Clone o repositório do projeto (ou baixe o repositório pelo GitHub):
 
-    git clone https://github.com/jesse-barbosa/jesse-barbosa.github.io.git
+    git clone https://github.com/jesse-barbosa/portfolio.git
 
 ### 2. Instale as dependências
 Instale todas as dependências necessárias usando npm ou yarn.  
