@@ -7,8 +7,8 @@ declare module "@remix-run/node" {
     v3_singleFetch: true;
   }
 }
-
 export default defineConfig({
+  base: "/",
   plugins: [
     remix({
       future: {
