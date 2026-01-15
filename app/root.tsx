@@ -1,18 +1,14 @@
 import {
-  data,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLoaderData,
-  useRouteLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/node";
 import "./tailwind.css";
-import i18nServer, { localeCookie } from "./modules/i18n.server";
-import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -31,21 +27,9 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export const handle = { i18n: ["translation"] };
-
-export async function loader({ request }: LoaderFunctionArgs) {
-  let locale = await i18nServer.getLocale(request); // get the locale
-  return data(
-    { locale },
-    { headers: { "Set-Cookie": await localeCookie.serialize(locale) } }
-  );
-}
-
 export function Layout({ children }: { children: React.ReactNode }) {
-  let loaderData = useRouteLoaderData<typeof loader>("root");
-
   return (
-    <html lang={loaderData?.locale ?? "en"}>
+    <html lang="pt">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -62,10 +46,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  let { locale } = useLoaderData<typeof loader>();
-  let { i18n } = useTranslation();
+  const { i18n } = useTranslation();
+
   useEffect(() => {
-    if (i18n.language !== locale) i18n.changeLanguage(locale);
-  }, [locale, i18n]);
+    // escolha do idioma no CLIENT
+    const savedLang =
+      localStorage.getItem("lng") ??
+      navigator.language.split("-")[0] ??
+      "pt";
+
+    i18n.changeLanguage(savedLang);
+  }, [i18n]);
+
   return <Outlet />;
 }
